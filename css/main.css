@@ -1,21 +1,21 @@
 /* Page layout */
-@import url("roboto.css");
+@import url("essays.css");
 
 .node {
-    line-height:.85em;
-    background-color: rgba(0, 0, 0, 0.2);
+    line-height:.90em;
 }
 
+
 body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-family: 'Essays 1743', sans-serif;
     font-style: normal;
 }
 
 .contents {
     margin-top:5%;
-    margin-left:10%;
-    margin-right:25%;
+    margin-left:15%;
+    margin-right:15%;
+    width:70%;
 }
 
 /* Sig & Header */
@@ -44,7 +44,6 @@ header h1 {
 
 header h1 em {
     letter-spacing: -2px;
-    font-weight: 300;
     font-style: normal;
     font-size: 160%;
 }
@@ -56,7 +55,6 @@ header a {
 
 /* Footer */
 footer h1 {
-    font-weight: 300;
     font-style: normal;
     font-size: 1.5em;
 }
