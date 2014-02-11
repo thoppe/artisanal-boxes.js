@@ -1,0 +1,74 @@
+/* Page layout */
+@import url("roboto.css");
+
+.node {
+    line-height:.85em;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.contents {
+    margin-top:5%;
+    margin-left:10%;
+    margin-right:25%;
+}
+
+/* Sig & Header */
+
+.sig {
+    background:rgb(228,29,107);
+    opacity:.75;
+    width: 20%;
+    max-width:300px;
+    min-width:150px;
+    margin-bottom:10%;
+    line-height:1.00em;
+}
+.sig a
+{
+    text-decoration:none;
+}
+
+header { } 
+
+header h1 {
+    font-size: 2em;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+
+header h1 em {
+    letter-spacing: -2px;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 160%;
+}
+
+header a {
+    text-decoration:none;
+    color:inherit;
+}
+
+/* Footer */
+footer h1 {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
+/* Alternating colors on the table */
+
+.shiny {
+    line-height:1.25em;
+    opacity:.75;
+    margin-bottom:3.0em;
+}
+
+.shiny :nth-child(even) {
+    background:rgb(228,29,107);
+}
