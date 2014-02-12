@@ -2,15 +2,11 @@
 @import url("essays.css");
 
 .colored {
-    background:rgb(228,29,107);
+
 }
 
 .node {
     line-height:.90em;
-    background:rgb(228,29,107);
-    opacity:.7;
-    /*padding-right:1em;*/
-    margin:1em;
 }
 
 
