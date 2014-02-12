@@ -1,14 +1,21 @@
 /* Page layout */
 @import url("essays.css");
 
+.colored {
+    background:rgb(228,29,107);
+}
+
 .node {
     line-height:.90em;
+    background:rgb(228,29,107);
+    opacity:.7;
+    /*padding-right:1em;*/
+    margin:1em;
 }
 
 
 body {
     font-family: 'Essays 1743', sans-serif;
-    font-style: normal;
 }
 
 .contents {
@@ -16,47 +23,6 @@ body {
     margin-left:20%;
     margin-right:20%;
     width:60%;
-}
-
-/* Sig & Header */
-
-.sig {
-    background:rgb(228,29,107);
-    opacity:.75;
-    width: 20%;
-    max-width:300px;
-    min-width:150px;
-    margin-bottom:10%;
-    line-height:1.00em;
-}
-.sig a
-{
-    text-decoration:none;
-}
-
-header { } 
-
-header h1 {
-    font-size: 2em;
-    font-style: normal;
-    letter-spacing: 1px;
-}
-
-header h1 em {
-    letter-spacing: -2px;
-    font-style: normal;
-    font-size: 160%;
-}
-
-header a {
-    text-decoration:none;
-    color:inherit;
-}
-
-/* Footer */
-footer h1 {
-    font-style: normal;
-    font-size: 1.5em;
 }
 
 /* Alternating colors on the table */
