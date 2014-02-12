@@ -1,41 +1,40 @@
 /* Page layout */
 @import url("essays.css");
 
-.colored {
-
+body {
+    font-family: 'Essays 1743', sans-serif;
 }
 
 .node {
     line-height:.90em;
 }
 
-.goldenspace{
+.goldenspaceV{
     min-width :10px;
     min-height:16.1803398875px;
     max-width :10px;
     max-height:16.1803398875px;
 }
 
-
-body {
-    font-family: 'Essays 1743', sans-serif;
+.goldenspaceH{
+    min-height :10px;
+    min-width:16.1803398875px;
+    max-height :10px;
+    max-width:16.1803398875px;
 }
+
+
+.vertical {
+  -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */
+}
+
 
 .contents {
     margin-top:5%;
     margin-left:auto;
     margin-right:auto;
     width:50%;
-}
-
-/* Alternating colors on the table */
-
-.shiny {
-    line-height:1.25em;
-    opacity:.75;
-    margin-bottom:3.0em;
-}
-
-.shiny :nth-child(even) {
-    background:rgb(228,29,107);
 }
