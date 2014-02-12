@@ -22,6 +22,9 @@ $(window).resize( solve_all_drawboxes );
 
 function solve_drawbox() {
 
+    // Remove any previous set widths or heights
+    $(this).css({"height":"","width":""});
+
     // Label the selectors
     var nodes  = $(".node", this);
     var boxes  = $(".hbox, .vbox", this)
@@ -61,6 +64,11 @@ function solve_drawbox() {
     // Set the first box to (0,0) position
     boxes.first().css({left:0,top:0});
     boxes.each(set_positions);
+
+    // Set the width, height on the drawbox so other elements can
+    // flow around it properly
+    $(this).css({"height":get_y_sol(0),
+                 "width" :get_x_sol(0)});
 
     // DEBUG: output
     //all_items.each(function() {console.log($(this).data())});
