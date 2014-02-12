@@ -72,7 +72,7 @@ function print(a) { console.log(numeric.prettyPrint(a)); };
 /* *********************************************************** */
 function scale_nodes_to_size() {
     var idx   = $(this).data("index");
-    var scale = get_x_sol(idx)/$(this).width();
+    var scale = get_x_sol(idx)/$(this).innerWidth();
     transform_scale($(this), scale);
 };
 
@@ -124,13 +124,13 @@ function get_x_sol(idx) {
 /* *********************************************************** */
 function set_final_width(ele) {
     set_x_equation(0,1);
-    eq.b[eq.eqn_idx] = ele.width();
+    eq.b[eq.eqn_idx] = ele.innerWidth();
     eq.eqn_idx += 1;
 };
 
 function set_final_height(ele) {
     set_y_equation(0,1);
-    eq.b[eq.eqn_idx] = ele.height();
+    eq.b[eq.eqn_idx] = ele.innerHeight();
     eq.eqn_idx += 1;
 };
 
@@ -186,7 +186,7 @@ function index_items(idx,ele) {
 
 function measure_aspect() {
     ele = $(this)
-    var aspect = ele.width()/ele.height();
+    var aspect = ele.innerWidth()/ele.innerHeight();
     ele.data("aspect",aspect);
 };
 
