@@ -9,6 +9,10 @@ body {
     line-height:.90em;
 }
 
+.node.script {
+    font-style:italic;
+}
+
 .goldenspaceV{
     min-width :10px;
     min-height:16.1803398875px;
@@ -22,15 +26,6 @@ body {
     max-height :10px;
     max-width:16.1803398875px;
 }
-
-
-.vertical {
-  -ms-transform:rotate(270deg); /* IE 9 */
-  -moz-transform:rotate(270deg); /* Firefox */
-  -webkit-transform:rotate(270deg); /* Safari and Chrome */
-  -o-transform:rotate(270deg); /* Opera */
-}
-
 
 .contents {
     margin-top:5%;
