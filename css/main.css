@@ -5,6 +5,10 @@ body {
     font-family: 'Essays 1743', sans-serif;
 }
 
+.inset .node {
+    line-height:.75em;
+}
+
 .node {
     line-height:.90em;
 }
@@ -35,5 +39,11 @@ body {
 }
 
 .inset {
-    margin:15%;
+    margin-left:15%;
+    margin-right:15%;
+    margin-top:10%;
+    margin-bottom:10%;
 }
+
+
+

@@ -12,7 +12,9 @@
 
 </head>
 .contents
-  = Haml::Engine.new(File.read('logo.haml')).render
+
+  .drawbox
+    = Haml::Engine.new(File.read('logo.haml')).render
 
   <br><br>
   %h1 What is it?
@@ -20,35 +22,12 @@
   CSS artisans craft organic boxes for your website.
   The boxes are fluid and respond to window resizes.
   Let's see an example:
-   
+
   .drawbox.inset
-    .vbox
-      .node BOXES
-      .node are sized
-      .node to match width
-      .hbox
-        .vbox
-          .node but they
-          .node can be
-        .node (as nested)
-        .vbox
-          .node as you
-          .node want them
+    = Haml::Engine.new(File.read('example.haml')).render
 
-  %pre.code
-    :plain
-      .drawbox.inset
-        .vbox
-          .node BOXES
-          .node are sized
-          .node to match width
-          .hbox
-            .vbox
-              .node but they
-              .node can be
-            .node (as nested)
-            .vbox
-              .node as you
-              .node want them
+  The blocks are easily built up with a little bit of HAML.
 
+  %pre.inset
+    = File.read('example.haml')
 </html>
