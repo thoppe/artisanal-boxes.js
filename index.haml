@@ -15,9 +15,40 @@
   = Haml::Engine.new(File.read('logo.haml')).render
 
   <br><br>
-  %h1 Box-in-a-box?
-  CSS artisans craft organic boxes for your website.
-  Hipster filler text, ad. lucem.
+  %h1 What is it?
 
+  CSS artisans craft organic boxes for your website.
+  The boxes are fluid and respond to window resizes.
+  Let's see an example:
+   
+  .drawbox.inset
+    .vbox
+      .node BOXES
+      .node are sized
+      .node to match width
+      .hbox
+        .vbox
+          .node but they
+          .node can be
+        .node (as nested)
+        .vbox
+          .node as you
+          .node want them
+
+  %pre.code
+    :plain
+      .drawbox.inset
+        .vbox
+          .node BOXES
+          .node are sized
+          .node to match width
+          .hbox
+            .vbox
+              .node but they
+              .node can be
+            .node (as nested)
+            .vbox
+              .node as you
+              .node want them
 
 </html>

@@ -26,8 +26,40 @@
     </div>
   </div>
   <br><br>
-  <h1>Box-in-a-box?</h1>
+  <h1>What is it?</h1>
   CSS artisans craft organic boxes for your website.
-  Hipster filler text, ad. lucem.
+  The boxes are fluid and respond to window resizes.
+  Let's see an example:
+  <div class='drawbox inset'>
+    <div class='vbox'>
+      <div class='node'>BOXES</div>
+      <div class='node'>are sized</div>
+      <div class='node'>to match width</div>
+      <div class='hbox'>
+        <div class='vbox'>
+          <div class='node'>but they</div>
+          <div class='node'>can be</div>
+        </div>
+        <div class='node'>(as nested)</div>
+        <div class='vbox'>
+          <div class='node'>as you</div>
+          <div class='node'>want them</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pre class='code'>.drawbox.inset
+    .vbox
+      .node BOXES
+      .node are sized
+      .node to match width
+      .hbox
+        .vbox
+          .node but they
+          .node can be
+        .node (as nested)
+        .vbox
+          .node as you
+          .node want them</pre>
 </div>
 </html>
