@@ -1,4 +1,4 @@
-.PHONY: css html js	
+.PHONY: css html js	index.html
 
 all: index.html
 #	#watch -n 1 make index.html

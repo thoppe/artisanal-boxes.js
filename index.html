@@ -30,8 +30,10 @@
   Artinsanal boxes is a javascript library that carefully crafts
   a series of nested divs into a tightly knit arrangement.
   These boxes are completely organic and fluidly respond to window resizes.
-  Let's see an example, with the little piece of HAML:
-  <pre class='code inset'>.hbox
+  They begin with class of <code>drawbox</code> and nest with <code>hbox</code>
+  and <code>vbox</code>'s. Let's see an example with a little piece of HAML:
+  <pre class='code inset'>.drawbox
+  .hbox
    .vbox
     .node BOXES
     .node are sized
@@ -46,6 +48,7 @@
       .node want them</pre>
   We get
   <div class='drawbox inset'>
+    <div class='drawbox'></div>
     <div class='hbox'>
       <div class='vbox'>
         <div class='node'>BOXES</div>
@@ -69,5 +72,13 @@
   done with pure HTML.
   <h1>How does it work?</h1>
   First we measure the aspect ratio for each end node of the nested structure. The boxes respect the bounding box of the font, hence changing line-height will give a tighter fit at the expense of overlapping descenders. Once the aspect ratio of the text (and any images) have been measured the unique layout is calculated and applied using transform-scale.
+  <h1>Is it fast?</h1>
+  Sorry son, in time you'll realize that good things are worth the wait.
+  The calculations to fit the boxes requires solving a linear system whose
+  size is proportional to each box <em>and</em> parent box. The calculation
+  is all done client-side and must be redone for any window resize. In practice,
+  this may add tenths of microseconds onto load times.
+  <h1>Is it beautiful?</h1>
+  Yes.
 </div>
 </html>
