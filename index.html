@@ -27,9 +27,24 @@
   </div>
   <br><br>
   <h1>What is it?</h1>
-  CSS artisans craft organic boxes for your website.
-  The boxes are fluid and respond to window resizes.
-  Let's see an example:
+  Artinsanal boxes is a javascript library that carefully crafts
+  a series of nested divs into a tightly knit arrangement.
+  These boxes are completely organic and fluidly respond to window resizes.
+  Let's see an example, with the little piece of HAML:
+  <pre class='code inset'>.hbox
+   .vbox
+    .node BOXES
+    .node are sized
+    .node to match width
+    .hbox
+     .vbox
+      .node but they
+      .node can be
+     .node (as nested)
+     .vbox
+      .node as you
+      .node want them</pre>
+  We get
   <div class='drawbox inset'>
     <div class='hbox'>
       <div class='vbox'>
@@ -50,19 +65,5 @@
       </div>
     </div>
   </div>
-  The blocks are easily built up with a little bit of HAML.
-  <pre class='inset'>.hbox
-   .vbox
-    .node BOXES
-    .node are sized
-    .node to match width
-    .hbox
-     .vbox
-      .node but they
-      .node can be
-     .node (as nested)
-     .vbox
-      .node as you
-      .node want them</pre>
 </div>
 </html>

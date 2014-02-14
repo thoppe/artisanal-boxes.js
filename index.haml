@@ -19,15 +19,18 @@
   <br><br>
   %h1 What is it?
 
-  CSS artisans craft organic boxes for your website.
-  The boxes are fluid and respond to window resizes.
-  Let's see an example:
+  Artinsanal boxes is a javascript library that carefully crafts 
+  a series of nested divs into a tightly knit arrangement. 
+  These boxes are completely organic and fluidly respond to window resizes. 
+  Let's see an example, with the little piece of HAML:
+
+  %pre.code.inset
+    = File.read('example.haml')
+
+  We get
 
   .drawbox.inset
     = Haml::Engine.new(File.read('example.haml')).render
 
-  The blocks are easily built up with a little bit of HAML.
 
-  %pre.inset
-    = File.read('example.haml')
 </html>
