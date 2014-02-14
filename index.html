@@ -65,5 +65,9 @@
       </div>
     </div>
   </div>
+  Hate HAML? That's OK, just check out the <a target="_blank" href="view-source:http://thoppe.github.io/artisanal-boxes.js/">source</a> of this page to see how it's
+  done with pure HTML.
+  <h1>How does it work?</h1>
+  First we measure the aspect ratio for each end node of the nested structure. The boxes respect the bounding box of the font, hence changing line-height will give a tighter fit at the expense of overlapping descenders. Once the aspect ratio of the text (and any images) have been measured the unique layout is calculated and applied using transform-scale.
 </div>
 </html>
