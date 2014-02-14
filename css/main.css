@@ -1,16 +1,31 @@
 /* Page layout */
 @import url("essays.css");
+@import url("libertine.css");
 
 body {
+    font-family: 'Libertine', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Essays 1743', sans-serif;
 }
 
-.inset .node {
-    line-height:.75em;
+.drawbox {
+    font-family: 'Essays 1743', sans-serif;
 }
 
-.node {
+.logo {
     line-height:.90em;
+}
+
+.logo a {
+    color:inherit;
+    text-decoration:none;
+}
+
+
+.inset .node {
+    line-height:.75em;
 }
 
 .node.script {
