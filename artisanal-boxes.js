@@ -11,16 +11,19 @@ function solve_all_artboxes(suppress_ready) {
 
     // Fire off an event when the artbox is solved for other libaries
     if(suppress_ready != true) {
-        $(this).ready("ready", null);
+        $(".artbox").each(function() {
+            $(this).trigger("ready");
+        });
     };
 };
 
 $(document).ready(function() {
-    // Run this once on document load, do not fire ready yet
-    solve_all_artboxes(true);
+    // Run this once on document ready, do not fire ready yet
+    solve_all_artboxes(suppress_ready=true);
 }); 
 
 $(window).on("load", function() { 
+    // Run again on load, now we can fire ready
     solve_all_artboxes();
 });
 
