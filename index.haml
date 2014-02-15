@@ -13,7 +13,7 @@
 </head>
 .contents
 
-  .drawbox.logo
+  .artbox.logo
     = Haml::Engine.new(File.read('logo.haml')).render
 
   <br><br>
@@ -22,7 +22,7 @@
   Artinsanal boxes is a javascript library that carefully crafts 
   a series of nested divs into a tightly knit arrangement. 
   These boxes are completely organic and fluidly respond to window resizes. 
-  They begin with class of <code>drawbox</code> and nest with <code>hbox</code>
+  They begin with class of <code>artbox</code> and nest with <code>hbox</code>
   and <code>vbox</code>'s. Let's see an example with a little piece of HAML:
 
   %pre.code.inset
@@ -30,7 +30,7 @@
 
   We get
 
-  .drawbox.inset
+  .artbox.inset
     = Haml::Engine.new(File.read('example.haml')).render
 
   Hate HAML? That's OK, just check out the <a target="_blank" href="view-source:http://thoppe.github.io/artisanal-boxes.js/">source</a> of this page to see how it's

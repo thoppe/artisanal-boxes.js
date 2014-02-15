@@ -1,8 +1,8 @@
-.drawbox {
+.artbox {
     position:relative;
 }
 
-.drawbox .hbox, .drawbox .vbox, .drawbox .node {
+.artbox .hbox, .artbox .vbox, .artbox .node {
     position:absolute;
     white-space:nowrap;
     outline:0px solid transparent;

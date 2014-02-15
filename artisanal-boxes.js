@@ -5,22 +5,22 @@ var eq = {
     sol:null,
     eqn_idx:null};
 
-function solve_all_drawboxes() {
-    $(".drawbox").each(solve_drawbox);
+function solve_all_artboxes() {
+    $(".artbox").each(solve_artbox);
 };
 
 $(document).ready(function() {
-    solve_all_drawboxes();
+    solve_all_artboxes();
 }); 
 
 $(window).on("load", function() { 
-    solve_all_drawboxes();
+    solve_all_artboxes();
 });
 
-$(window).resize( solve_all_drawboxes );
+$(window).resize( solve_all_artboxes );
 
 
-function solve_drawbox() {
+function solve_artbox() {
 
     // Remove any previous set widths or heights
     $(this).css({"height":"","width":""});
@@ -46,7 +46,7 @@ function solve_drawbox() {
     nodes.each(assign_node_equation);
 
     // Loop over the boxes, assign matrix equations
-    boxes.each(assign_box_equation);
+    boxes.each(assign_box_equations);
 
     // Set the final width (for now, no final height)
     set_final_width($(this));
@@ -65,7 +65,7 @@ function solve_drawbox() {
     boxes.first().css({left:0,top:0});
     boxes.each(set_positions);
 
-    // Set the width, height on the drawbox so other elements can
+    // Set the width, height on the artbox so other elements can
     // flow around it properly
     $(this).css({"height":get_y_sol(0),
                  "width" :get_x_sol(0)});
@@ -90,17 +90,17 @@ function set_positions() {
     var delta = 0;
 
     if ($(this).hasClass("vbox")) {
-	kids.each(function() { 
-	    $(this).css({left:0,top:delta});
-	    delta += get_y_sol($(this).data("index"));
-	});
+	      kids.each(function() { 
+	          $(this).css({left:0,top:delta});
+	          delta += get_y_sol($(this).data("index"));
+	      });
     }
 
     else if ($(this).hasClass("hbox")) {
-	kids.each(function() { 
-	    $(this).css({left:delta,top:0});
-	    delta += get_x_sol( $(this).data("index") );
-	});
+	      kids.each(function() { 
+	          $(this).css({left:delta,top:0});
+	          delta += get_x_sol( $(this).data("index") );
+	      });
     };
 };
 
@@ -112,6 +112,8 @@ function set_dimensions() {
     $(this).height( get_y_sol(idx) );
 };
 
+/* *********************************************************** */
+// Helper functions
 /* *********************************************************** */
 
 function set_x_equation(idx, val) {
@@ -143,17 +145,17 @@ function set_final_height(ele) {
 };
 
 /* *********************************************************** */
-function assign_box_equation() {
+function assign_box_equations() {
 
     // Determine if we are vertical or horzontial
     var f1, f2;
     if($(this).hasClass("vbox")) {
-	f1 = set_y_equation;
-	f2 = set_x_equation;
+	      f1 = set_y_equation;
+	      f2 = set_x_equation;
     }
     else if($(this).hasClass("hbox")) {
-	f1 = set_x_equation;
-	f2 = set_y_equation;
+	      f1 = set_x_equation;
+	      f2 = set_y_equation;
     };
 
     var self_idx = $(this).data("index");
@@ -161,8 +163,8 @@ function assign_box_equation() {
 
     // Sum along growth direction equals parent
     kids.each(function() {
-	var kid_idx = $(this).data("index");
-	f1(kid_idx, 1);
+	      var kid_idx = $(this).data("index");
+	      f1(kid_idx, 1);
     });
 
     f1(self_idx, -1);
@@ -170,10 +172,10 @@ function assign_box_equation() {
 
     // Each of the childrens dimension must match the parent
     kids.each(function() {
-	var kid_idx = $(this).data("index");
-	f2(kid_idx ,  1);
-	f2(self_idx, -1);
-	eq.eqn_idx += 1;
+	      var kid_idx = $(this).data("index");
+	      f2(kid_idx ,  1);
+	      f2(self_idx, -1);
+	      eq.eqn_idx += 1;
     });
 };
 
@@ -193,7 +195,7 @@ function index_items(idx,ele) {
 };
 
 function measure_aspect() {
-    ele = $(this)
+    ele = $(this);
     var aspect = ele.innerWidth()/ele.innerHeight();
     ele.data("aspect",aspect);
 };
