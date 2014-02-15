@@ -11,12 +11,27 @@ body {
     background:url(../images/paper-bg.jpg) ;
 }
 
+.contents {
+    margin-top:5%;
+    margin-left:auto;
+    margin-right:auto;
+    width:70%;
+}
+
+.inset {
+    margin-left:15%;
+    margin-right:15%;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Essays 1743', sans-serif;
 }
 
 .artbox {
     font-family: 'Essays 1743', sans-serif;
+    margin-top:1em;
+    margin-bottom:1em;
+
 }
 
 .logo {
@@ -50,20 +65,5 @@ h1, h2, h3, h4, h5, h6 {
     max-height :10px;
     max-width:16.1803398875px;
 }
-
-.contents {
-    margin-top:5%;
-    margin-left:auto;
-    margin-right:auto;
-    width:70%;
-}
-
-.inset {
-    margin-left:15%;
-    margin-right:15%;
-    margin-top:5%;
-    margin-bottom:5%;
-}
-
 
 
