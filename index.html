@@ -34,7 +34,7 @@
   These boxes are completely organic and fluidly respond to window resizes.
   They begin with class of <code>artbox</code> and nest with <code>hbox</code>
   and <code>vbox</code>'s. Let's see an example with a little piece of HAML:
-  <pre class='code inset'>.artbox
+  <pre class='code'>.artbox
    .hbox
     .vbox
      .node BOXES
@@ -48,7 +48,7 @@
       .vbox
        .node as you
        .node want them</pre>
-  We get
+  We get the following artbox, rendered on the fly
   <div class='artbox inset'>
     <div class='artbox'>
       <div class='hbox'>
@@ -71,12 +71,20 @@
       </div>
     </div>
   </div>
-  Hate HAML? That's OK, just check out the <a target="_blank" href="view-source:http://thoppe.github.io/artisanal-boxes.js/">source</a> of this page to see how it's
-  done with pure HTML.
+  Hate HAML? That's OK, just check out the <a target="_blank" href="view-source:http://thoppe.github.io/artisanal-boxes.js/">source</a> of this page to see how it's done with pure HTML.
   <h1>How does it work?</h1>
   First we measure the aspect ratio for each end node of the nested structure. The boxes respect the bounding box of the font, hence changing line-height will give a tighter fit at the expense of overlapping descenders. Once the aspect ratio of the text (and any images) have been measured the unique layout is calculated and applied using transform-scale.
+  <h1>Is it new?</h1>
+  Some libraries like <a href="http://fittextjs.com">FitText</a>
+  resize the font to match a specific width. Others, like
+  <a href="https://github.com/zachleat/BigText">BigText</a>,
+  will play with variations of line-height and font-size to get a
+  reasonable fit. The spiritual successor to artisanal boxes,
+  <a href="http://thoppe.github.io/make-it-work">make-it-work.js</a>,
+  used text-transforms, but only for a single vertical column.
+  Once we realized that <em>any</em> arbitrarily nested structure had a unique solution, it was time to learn javascript. So yes, it's new.
   <h1>Is it fast?</h1>
-  Sorry son, in time you'll realize that good things are worth the wait.
+  In time you'll realize that good things are worth the wait.
   The calculations to fit the boxes requires solving a linear system whose
   size is proportional to each box <em>and</em> parent box. The calculation
   is all done client-side and must be redone for any window resize. In practice,
