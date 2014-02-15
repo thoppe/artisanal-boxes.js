@@ -6,12 +6,18 @@ var eq = {
     eqn_idx:null
 };
 
-function solve_all_artboxes() {
+function solve_all_artboxes(suppress_ready) {
     $(".artbox").each(solve_artbox);
+
+    // Fire off an event when the artbox is solved for other libaries
+    if(suppress_ready != true) {
+        $(this).ready("ready", null);
+    };
 };
 
 $(document).ready(function() {
-    solve_all_artboxes();
+    // Run this once on document load, do not fire ready yet
+    solve_all_artboxes(true);
 }); 
 
 $(window).on("load", function() { 
