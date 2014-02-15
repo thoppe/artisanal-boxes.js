@@ -1,4 +1,4 @@
-#[`artisanal-boxes.js`](http://thoppe.github.io/artisanal-boxes.js)
+# [artisanal-boxes.js](http://thoppe.github.io/artisanal-boxes.js)
 
 premium/hand-crafted boxes designed to fit your life.
 
