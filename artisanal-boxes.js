@@ -11,8 +11,6 @@ function solve_all_artboxes() {
 };
 
 $(document).ready(function() {
-    document.artbox.style.color = "red";
-
     solve_all_artboxes();
 }); 
 
