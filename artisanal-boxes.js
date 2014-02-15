@@ -3,7 +3,8 @@ var eq = {
     b:null,
     N:null,
     sol:null,
-    eqn_idx:null};
+    eqn_idx:null
+};
 
 function solve_all_artboxes() {
     $(".artbox").each(solve_artbox);

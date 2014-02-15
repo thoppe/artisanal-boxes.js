@@ -36,36 +36,37 @@
   They begin with class of <code>artbox</code> and nest with <code>hbox</code>
   and <code>vbox</code>'s. Let's see an example with a little piece of HAML:
   <pre class='code inset'>.artbox
-  .hbox
-   .vbox
-    .node BOXES
-    .node are sized
-    .node to match width
-    .hbox
-     .vbox
-      .node but they
-      .node can be
-     .node (as nested)
-     .vbox
-      .node as you
-      .node want them</pre>
+   .hbox
+    .vbox
+     .node BOXES
+     .node are sized
+     .node to match width
+     .hbox
+      .vbox
+       .node but they
+       .node can be
+      .node (as nested)
+      .vbox
+       .node as you
+       .node want them</pre>
   We get
   <div class='artbox inset'>
-    <div class='artbox'></div>
-    <div class='hbox'>
-      <div class='vbox'>
-        <div class='node'>BOXES</div>
-        <div class='node'>are sized</div>
-        <div class='node'>to match width</div>
-        <div class='hbox'>
-          <div class='vbox'>
-            <div class='node'>but they</div>
-            <div class='node'>can be</div>
-          </div>
-          <div class='node'>(as nested)</div>
-          <div class='vbox'>
-            <div class='node'>as you</div>
-            <div class='node'>want them</div>
+    <div class='artbox'>
+      <div class='hbox'>
+        <div class='vbox'>
+          <div class='node'>BOXES</div>
+          <div class='node'>are sized</div>
+          <div class='node'>to match width</div>
+          <div class='hbox'>
+            <div class='vbox'>
+              <div class='node'>but they</div>
+              <div class='node'>can be</div>
+            </div>
+            <div class='node'>(as nested)</div>
+            <div class='vbox'>
+              <div class='node'>as you</div>
+              <div class='node'>want them</div>
+            </div>
           </div>
         </div>
       </div>
