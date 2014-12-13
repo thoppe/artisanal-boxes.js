@@ -5,7 +5,6 @@ var eq = {
     sol:null,
     eqn_idx:null
 };
-
 function solve_all_artboxes(suppress_ready) {
     $(".artbox").each(solve_artbox);
 
@@ -15,15 +14,14 @@ function solve_all_artboxes(suppress_ready) {
             $(this).trigger("ready");
         });
     };
+
 };
 
 $(document).ready(function() {
-    // Run this once on document ready, do not fire ready yet
     solve_all_artboxes(suppress_ready=true);
 }); 
 
 $(window).on("load", function() { 
-    // Run again on load, now we can fire ready
     solve_all_artboxes();
 });
 
@@ -59,7 +57,7 @@ function solve_artbox() {
     boxes.each(assign_box_equations);
 
     // Set the final width (for now, no final height)
-    set_final_width($(this));
+    set_final_width(this);
     
     // Solve the matrix equations
     eq.sol = numeric.solve(eq.A,eq.b);
@@ -90,7 +88,7 @@ function print(a) { console.log(numeric.prettyPrint(a)); };
 /* *********************************************************** */
 function scale_nodes_to_size() {
     var idx   = $(this).data("index");
-    var scale = get_x_sol(idx)/$(this).innerWidth();
+    var scale = get_x_sol(idx)/measure_width(this);
     transform_scale($(this), scale);
 };
 
@@ -144,13 +142,13 @@ function get_x_sol(idx) {
 /* *********************************************************** */
 function set_final_width(ele) {
     set_x_equation(0,1);
-    eq.b[eq.eqn_idx] = ele.innerWidth();
+    eq.b[eq.eqn_idx] = measure_width(ele);
     eq.eqn_idx += 1;
 };
 
 function set_final_height(ele) {
     set_y_equation(0,1);
-    eq.b[eq.eqn_idx] = ele.innerHeight();
+    eq.b[eq.eqn_idx] = measure_height(ele);
     eq.eqn_idx += 1;
 };
 
@@ -204,10 +202,18 @@ function index_items(idx,ele) {
     $(this).data("index",idx);
 };
 
+function measure_width(ele) {
+    // Measures the width to subpixel precision, jQuery rounds
+    return parseFloat(window.getComputedStyle(ele).width);
+}
+
+function measure_height(ele) {
+    return parseFloat(window.getComputedStyle(ele).height);
+}
+
 function measure_aspect() {
-    ele = $(this);
-    var aspect = ele.innerWidth()/ele.innerHeight();
-    ele.data("aspect",aspect);
+    var aspect = measure_width(this)/measure_height(this);
+    $(this).data("aspect",aspect);   
 };
 
 /* Cross browser CSS3 functions */                 
